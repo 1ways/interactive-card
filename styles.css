@@ -1,0 +1,361 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.card-preview {
+    width: 550px;
+    height: 100vh;
+    background-image: url(images/bg-main-desktop.png);
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+.card-preview__front {
+    position: absolute;
+    top: 10%;
+    left: 70px;
+
+    z-index: 2;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-preview__front-bg {
+    max-width: 447px;
+}
+
+.card-preview__front-info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.card-preview__front-info-number {
+    flex: 1;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 3.2px;
+    color: #fff;
+
+    margin-top: 70px;
+}
+
+.card-preview__last-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+
+.card-preview__front-info-name {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.75px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.card-preview__front-info-date {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.75px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.card-preview__back {
+    position: absolute;
+    top: 50%;
+    left: 130px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-preview__back-bg {
+    max-width: 447px;
+}
+
+.card-preview__back-info {
+    position: absolute;
+    top: 112px;
+    right: 60px;
+}
+
+.card-preview__back-info-number {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2.16px;
+    color: #fff;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-form__label {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.75px;
+    color: hsl(278, 68%, 11%);
+}
+
+.card-form__input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid hsl(270, 3%, 87%);
+    border-radius: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
+
+.card-form__input.error {
+    border-color: hsl(0, 100%, 66%);
+}
+
+.card-form__error {
+    font-size: 10px;
+    font-weight: 500;
+    color: hsl(0, 100%, 66%);
+
+    display: none;
+}
+
+.card-form__input.error+.card-form__error {
+    display: block;
+}
+
+.card-form__input::placeholder {
+    color: hsl(270, 2%, 76%);
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.card-form__input:focus {
+    outline: none;
+    border-color: hsl(278, 68%, 11%);
+}
+
+.card-form__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.card-form__row .card-form__group {
+    width: 50%;
+}
+
+.card-form__row--exp-date {
+    display: flex;
+    gap: 10px;
+}
+
+.card-form__button {
+    padding: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background-color: hsl(278, 68%, 11%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.card-form__button:hover {
+    background-color: hsl(278, 94%, 30%);
+}
+
+.card-form__success {
+    text-align: center;
+    width: 300px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-form__success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.card-form__success-icon.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-form__success-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: hsl(278, 68%, 11%);
+    margin-bottom: 20px;
+}
+
+.card-form__success-subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: hsl(270, 2%, 76%);
+    margin-bottom: 40px;
+}
+
+.card-form__success-button {
+    width: 100%;
+    padding: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background-color: hsl(278, 68%, 11%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.card-form__success-button:hover {
+    background-color: hsl(278, 94%, 30%);
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .card-preview {
+        width: 100%;
+        height: 300px;
+    }
+
+    .card-preview__front {
+        left: 50%;
+        top: 100px;
+        transform: translateX(-64%);
+    }
+
+    .card-preview__back {
+        left: 50%;
+        top: 20px;
+        transform: translateX(-37%);
+    }
+
+    .card-info {
+        flex: 1;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .card-preview {
+        height: 200px;
+    }
+
+    .card-preview__front {
+        width: 300px;
+    }
+
+    .card-preview__front-bg {
+        max-width: 100%;
+    }
+
+    .card-preview__front-info {
+        padding: 15px;
+    }
+
+    .card-preview__front-info-logo {
+        width: 40px;
+    }
+
+    .card-preview__front-info-number {
+        font-size: 18px;
+        margin-top: 60px;
+    }
+
+    .card-preview__front-info-name {
+        font-size: 11px;
+    }
+
+    .card-preview__front-info-date {
+        font-size: 11px;
+    }
+
+    .card-preview__back {
+        width: 300px;
+    }
+
+    .card-preview__back-bg {
+        max-width: 100%;
+    }
+
+    .card-preview__back-info {
+        right: 35px;
+        top: 74px;
+    }
+
+    .card-preview__back-info-number {
+        font-size: 11px;
+    }
+
+
+
+}
