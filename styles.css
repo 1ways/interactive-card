@@ -311,7 +311,7 @@ img {
     }
 
     .card-preview__front {
-        width: 300px;
+        width: 270px;
     }
 
     .card-preview__front-bg {
@@ -327,20 +327,20 @@ img {
     }
 
     .card-preview__front-info-number {
-        font-size: 18px;
-        margin-top: 60px;
+        font-size: 16px;
+        margin-top: 50px;
     }
 
     .card-preview__front-info-name {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .card-preview__front-info-date {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .card-preview__back {
-        width: 300px;
+        width: 270px;
     }
 
     .card-preview__back-bg {
@@ -349,11 +349,11 @@ img {
 
     .card-preview__back-info {
         right: 35px;
-        top: 74px;
+        top: 67px;
     }
 
     .card-preview__back-info-number {
-        font-size: 11px;
+        font-size: 10px;
     }
 
 
